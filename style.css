@@ -1,0 +1,675 @@
+  /*----Début Splash Screen et démarrage de la page d'accueil (animation vidéo, 1er mouvement de scrolling)-----*/
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+    
+}
+.load-container {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-image: url('ressources/wave.jpg');
+    pointer-events: none;
+}
+
+.anim-bloc {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    z-index: 100;
+
+}
+ .bloc-txt {
+    background: white;
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    height: 0;
+    z-index: 165;
+    overflow: hidden;
+}
+
+.bloc-txt h2 {
+    padding: 10px 30px;
+    color: #222;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    transform: translateY(100px);
+}
+
+.images-container {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    /* Pour faire monter la height de bas en haut */
+    bottom: 0px;
+    z-index: 150;
+    overflow: hidden;
+}
+
+.img-flip{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    position: absolute;
+}
+
+.flip-img1 {
+    background-image: url(ressources/image3.png);
+}
+
+.flip {
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    position: absolute;
+}
+
+.f2 {
+    background: #9b1339;
+}
+
+
+
+.home {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    z-index:1;
+  }
+     /* Configuration du design de la page d'accueil */
+  #overlay{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    margin-top: 100px;
+    z-index:2;
+    color: white;
+  }
+
+  #overlay h2 {
+    font-size: 50px;
+    font-weight: 900px;
+    margin-bottom: auto;
+  }
+
+
+  #overlay p {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+.infos{
+    display: flex;
+    align-items: center;
+}
+/*----Fin Splash Screen et démarrage de la page d'accueil (animation vidéo, 1er mouvement de scrolling)-----*/
+
+
+/*----Début Configuration de l'effet de Scrolling et de parallax et des minis pages associées (light & Dark)-----*/
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+.pimg1, .pimg2, .pimg3, .pimg4, .pimg5, .pimg6{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url(ressources/cadenas.jpeg);
+  min-height:400px;
+}
+
+.pimg3{
+  background-image:url(ressources/main.jpeg);
+  min-height:400px;
+}
+
+.pimg4{
+  background-image:url(ressources/books.jpg);
+  min-height:400px;
+}
+
+.pimg5{
+  background-image:url(ressources/telephone.jpg);
+  min-height:400px;
+}
+
+.pimg6{
+  background-image:url(ressources/stripes.png);
+  min-height:400px;
+}
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3, .pimg4, .pimg5, .pimg6{
+    background-attachment:scroll;
+  }
+}
+/*---- Fin Configuration de l'effet de Scrolling et de parallax et des minis pages associées (light & Dark)-----*/
+
+
+/*---- Début configuration de la barre de menu-----*/
+body{
+	font-family: 'PT Sans',sans-serif;
+	background-color: #373c56;
+}
+#menu{
+	width: 35px;
+	height: 30px;
+	margin: 30px 0 20px 20px;
+	cursor: pointer;
+}
+.bar{
+	height: 5px;
+	width: 100%;
+	background-color: #b81568;
+	display: block;
+	border-radius: 5px;
+	transition: 0.3s ease;
+}
+#bar1{
+	transform: translateY(-4px);
+}
+#bar3{
+	transform: translateY(4px);
+}
+.nav ol a{
+	color: #fff;
+	text-decoration: none;
+}
+.nav ol a:hover{
+	font-weight: bold;
+}
+.nav ol{
+	list-style: none;
+	padding: 16px 0;
+}
+.nav{
+	padding: 0;
+	margin: 0 20px;
+	transition: 0.3s ease;
+	display: none;
+}
+.menu-bg, #menu-bar{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+.menu-bg{
+	z-index: 1;
+	width: 0;
+	height: 0;
+	margin: 30px 0 20px 20px;
+	background: radial-gradient(circle,#e94498,#b81568);
+	border-radius: 50%;
+	transition: 0.3s ease;
+}
+#menu-bar{
+	z-index: 2;	
+}
+.change-bg{
+	width: 550px;
+	height: 540px;
+	transform: translate(-60%,-30%);
+}
+.change .bar{
+	background-color: white;
+}
+.change #bar1{
+	transform: translateY(4px) rotateZ(-45deg);
+}
+.change #bar3{
+	transform: translateY(-6px) rotate(45deg);
+}
+.change #bar2{
+	opacity: 0;
+}
+.change{
+	display: block;
+}
+/*----Fin configuration de la barre de menu-----*/
+
+
+/*----Début configuration de la flèche de remontée-----*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  padding: 50px 200px;
+}
+
+.txt {
+  font-size: 25px;
+  padding: 50px 200px;
+  text-align: justify;
+  line-height: 30px;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  background: rgb(245, 242, 242);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+.icone {
+  width: 50px;
+}
+
+/*----Fin configuration de la flèche de remontée-----*/
+
+
+
+/*----Début configuration des boutons de contact---(sur les réseaux sociaux)---*/
+
+.icons {
+  display: flex;
+  margin: 40px 0;
+  justify-content: center;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  height: 70px;
+  width: 70px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: #dde1e7;
+  cursor: pointer;
+  box-shadow: -3px -3px 7px #ffffff73,
+          3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+li a {
+  line-height: 70px;
+  font-size: 27px;
+  color: #b6bbc5;
+}
+
+.first li.shadow-1 {
+  box-shadow: inset -3px -3px 7px #ffffff73,
+      inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+.first li.shadow-1 a {
+  font-size: 25px;
+}
+
+.second li.shadow-2 a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 55px;
+  width: 55px;
+  line-height: 55px;
+  border-radius: 50px;
+  background: #dde1e7;
+  font-size: 24px;
+  box-shadow: inset -3px -3px 7px #ffffff73,
+      inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+li:nth-child(1).fill-color a {
+  color: #1877f2;
+}
+li:nth-child(2).fill-color a {
+  color: #1da1f2;
+}
+li:nth-child(3).fill-color a {
+  color: #000;
+}
+li:nth-child(4).fill-color a {
+  color: #ff0000;
+}
+li:nth-child(5).fill-color a {
+  color: #c32aa3;
+}
+/*----Fin configuration des boutons de contact (sur les réseaux sociaux)-----*/
+
+/*---Mon adresse fixe----*/
+.infos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h6{
+  color: #1877f2;
+}
+/* ---Fin Mon adresse fixe----*/
+
+
+/*----Début configuration du formulaire de soumission d'une demande de service-----*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.contact-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+.heading{
+    padding: 30px 0px;
+    font-size: 35px;
+}
+.contact-box{
+    display: flex;
+    width: 90%;
+    min-height: 80vh;
+    background-color: rgb(238, 238, 238);
+    padding: 20px;
+    box-shadow: 15px 15px 15px rgb(211, 208, 208);
+    border-radius: 10px;
+}
+.left-contact{
+    background-color: #373c56;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+
+.right-contact,.form-container{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px;
+}
+input,textarea{
+    width: 450px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: rgb(190, 187, 187);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+label{
+    font-size: 22px;
+    padding: 10px 0px;
+}
+select{
+    width: 420px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(190, 187, 187);
+    border: 2px solid #b41457;
+    font-size: 18px;
+    margin: 10px;
+
+ }
+ input,submit{
+    padding: 15px 40px;
+    border: none;
+    background-color:  rebeccapurple;
+    font-size: 20px;
+    margin: 30px 0px;
+    border-radius: 5px;
+    color: white;
+    transition: .5s all ease-in-out;
+    border: 2px solid transparent;
+}
+button:hover{
+    background-color: transparent;
+    border: 2px solid rebeccapurple;
+    color: rebeccapurple;
+}
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.lab{
+    padding: 20px 100px;
+    font-size: 50px;
+    color: rebeccapurple;
+}
+
+@media screen and (max-width:1350px ) {
+    .lab{
+        padding: 20px 20px;
+    }
+}
+@media screen and (max-width:1200px ) {
+   .contact-box{
+       width: 95%;
+   }
+}
+@media screen and (max-width:1100px ) {
+    
+    input,textarea{
+        width: 350px;
+    }
+}
+@media screen and (max-width:950px ) {
+    .contact-box{
+        flex-direction: column;
+    } 
+}
+@media screen and (max-width:520px ) {
+    .form-container{
+        flex-direction: column;
+    }
+      
+}
+@media screen and (max-width:420px ) {
+    input,textarea{
+        width: 300px;
+    } 
+}
+/*----Fin configuration du formulaire de soumission d'une demande de service-----*/
+        
+
+
+
+/*---Présentation du personnage (animation du texte)----*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+
+
+ body{
+ 	margin:0;
+ 	font-family: 'Poppins', sans-serif;
+ 	font-weight: 400;
+ }
+
+ *{
+ 	box-sizing: border-box;
+ }
+
+ .container{
+ 	max-width: 1170px;
+ 	width: 100%;
+ 	margin:auto;
+ }
+
+ .home{
+ 
+ 	background-image: none;
+ 	background-size: cover;
+ 	background-position: center;
+ 	display: flex;
+ 	flex-wrap: wrap;
+ 	padding:50px 15px;
+ 	position: relative;
+ }
+ .home::before{
+ 	content: '';
+ 	position: absolute;
+ 	left:0;
+ 	top:0;
+ 	width: 100%;
+ 	height: 100%;
+ 	
+ 	z-index: 1;
+ }
+
+ .home .home-text{
+ 	text-align: center;
+ 	position: relative;
+ 	z-index: 2;
+ }
+
+.home .home-text h5{
+	color:#ffffff;
+	font-size: 50px;
+	color:#ffffff;
+	line-height: 56px;
+	font-weight: 700;
+	margin:0 0 20px;
+}
+.home .home-text p{
+	margin:0;
+	overflow: hidden;
+}
+.home .home-text p span{
+    font-size: 30px;
+    color:#ff2c45;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 46px;
+    display: none;
+}
+
+.home .home-text p span.text-in{
+	display: block;
+	animation: textIn .7s ease;
+}
+.home .home-text p span.text-out{
+	animation: textOut .7s ease;
+}
+@keyframes textIn{
+	0%{
+		transform: translateY(100%);
+	}
+	100%{
+		transform: translateY(0%);
+	}
+}
+@keyframes textOut{
+	0%{
+		transform: translateY(0%);
+	}
+	100%{
+		transform: translateY(-100%);
+
+	}
+}
+/*---Fin Présentation du personnage (animation du texte)----*/
+

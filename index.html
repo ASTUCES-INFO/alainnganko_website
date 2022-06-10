@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Utile pour avoir le même rendu sur PC et mobile-->
+
+    <title>Accueil</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+     <!-- Liens pour accéder aux icônes de la librairie FontAwesome en local-->
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="css/fontawesome.min">
+		<link rel="stylesheet" type="text/css" href="webfonts">
+    <link href="bootstrap_5_1_3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" /> <!-- Liens pour accéder au fichier CSS-->
+  </head>
+
+  <body>
+    <!-- Début du Bloc de configuration du SplashScreen-->
+    <div class="load-container">
+      <div class="anim-bloc">
+        <div class="images-container">
+            <div class="img-flip flip-img1"></div>
+            <div class="flip f2"></div>
+        </div>
+        <div class="bloc-txt">
+          <h2>Dr. Alain Nganko Nkwilang</h2>
+        </div>
+      </div>
+    </div> <!-- Fin du Bloc de configuration du SplashScreen-->
+
+
+     <!-- Début du Bloc de configuration de la page d'accueil avec animation vidéo-->
+    <header class="videoHeader">   <!-- La classe en HTML 5 permettant de charger et de gérer un fichier vidéo-->
+      <video src="ressources/Time - 3965_2.MP4" autoplay muted loop></video>   <!-- La vidéo est chargée et lue automatiquement, le son est coupé et la vidéo tourne en boucle-->
+      <div id="overlay">
+
+        <div class="infos">
+          <div> <img src="icones/telephonique.png"></div> <!-- icône du téléphone issue de la librairie FabIcone-->
+        <p><h6>(+33) 6 04 01 73 92 </h6></p>
+      </div>
+      <div class="infos">
+        <div> <img src="icones/email.png"></div> <!-- icône du téléphone issue de la librairie FabIcone-->
+      <p><h6>alainnganko@gmail.com </h6></p>
+    </div>
+        <div class="infos">
+          <div> <img src="icones/home.png"></div> <!-- icône issue de la librairie FabIcone-->
+        <p><h6>1, route de Brière les Scellées
+          Étampes.91150. France </h6></p><br/>
+      </div>
+
+     <!-- Présentation du personnage avec animation du texte-->
+        <section class="home">
+          <div class="container">
+             <div class="row">
+                 <div class="home-text">
+                      <h5>JE SUIS </h5>
+                      <p class="animate-text">
+                         <span>Expert en Intelligence économique et en cybersécurité</span>
+                         <span>Officier de Police Judiciaire</span>
+                         <span>Expert en Sécurité et en Protection physique</span>
+                         <span>Spécialiste de la formation et du management des équipes de sécurité </span>
+                         <span>Spécialiste de l’analyse et de la gestion des risques sûreté et de la cybersécurité</span>
+                         <span>Développeur Web et Web Mobile</span>
+                      </p>
+                 </div>
+             </div>
+          </div>
+      </section>
+     <!-- Fin Présentation du personnage -->
+
+      <!-- Début animation du texte-->
+     <script>
+              const txts=document.querySelector(".animate-text").children,
+                    txtsLen=txts.length;
+                let index=0;
+               const textInTimer=3000,
+                     textOutTimer=2800;
+
+              function animateText() {
+                 for(let i=0; i<txtsLen; i++){
+                   txts[i].classList.remove("text-in","text-out");
+                 }
+                 txts[index].classList.add("text-in");
+
+                 setTimeout(function(){
+                     txts[index].classList.add("text-out");
+                 },textOutTimer)
+
+                 setTimeout(function(){
+
+                   if(index == txtsLen-1){
+                       index=0;
+                     }
+                    else{
+                        index++;
+                      }
+                     animateText();
+                 },textInTimer);
+              }
+
+              window.onload=animateText;
+
+     </script>
+    <!-- Fin animation du texte-->
+ <!-- Fin Présentation du personnage avec animation du texte-->
+
+        <!-- Début configuration de la barre de menu-->
+        <div id="menu-bar">
+          <div id="menu" onclick="onClickMenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+          </div>
+          <ul class="nav" id="nav">
+            <ol><a href="#">Qualifications</a></ol>
+            <ol><a href="#COMPETENCES DEMONTREES">Compétences</a></ol>
+            <ol><a href="#EXPERIENCE">Expérience</a></ol>
+            <ol><a href="#FORMATIONS">formations</a></ol>
+            <ol><a href="#CONTACT">Contact</a></ol>
+          </ul>
+        </div> <!-- Fin configuration de la barre de menu-->
+
+
+
+
+        <!-- Début de création des mini pages (Qualifications, Compétences, Expérience...)-->
+
+
+      <section class="section section-light">
+        <h2>Qualifications</h2>
+        <p><br/>
+          Officier de Police Judiciaire <br/> <br/>  Directeur d’enquête de Police Judiciaire et
+          Administrative<br/> <br/>
+          Expert en Sécurité et en Protection physique <br/> <br/> Expert en intelligence économique
+          et en Cybersécurité<br/> <br/>
+          Spécialiste de la formation et du management des équipes de sécurité, de l’analyse
+          et de la gestion des risques sûreté et de la cybersécurité<br/> <br/>
+          Titre Professionnel de Développeur Web et Web Mobile (DWWM)
+          GRETA94-MTE Cachan Cachan, France
+        </p>
+      </section>
+
+      <div class="pimg2">
+        <div class="ptext">
+          <span class="border trans">
+            <strong>COMPETENCES DEMONTREES</strong> <h2 id="COMPETENCES DEMONTREES"></h2>
+          </span>
+        </div>
+      </div>
+
+      <section class="section section-dark">
+        <h2>Compétences démontrées</h2>
+        <p><br/>
+          Sûreté, Sécurité, Gestion des Risques et catastrophes, protection physique<br/> <br/>
+          -Enquêtes économiques/criminelles (judiciaires/administratives)<br/> <br/>
+          -Analyse et interprétation des risques sûreté et sécurité<br/> <br/>
+          -Contrôle, audit et services d’intelligence (IE, IA, CE et ES)<br/> <br/>
+          -Contrôle, supervision, formation et gestion des équipes de travail<br/> <br/>
+          -Management des projets ainsi que les ressources mises à disposition (humaines/
+          logistiques/ matérielles/économiques)<br/> <br/>
+          -Alertes sur les menaces cyber et signalement des opportunités de sortie de crises
+        </p>
+      </section>
+
+      <div class="pimg3">
+        <div class="ptext">
+          <span class="border trans">
+            <strong>EXPERIENCE</strong> <h2 id="EXPERIENCE"></h2>
+          </span>
+        </div>
+      </div>
+
+      <section class="section section-dark">
+        <h2>Expérience</h2>
+        <p><br/>
+          <h4><strong>DIRECTEUR D’ENQUETES AU CABINET DU DGSN </strong></h4>
+          05 février 2018 – 26 avril 2020
+          Conduite les enquêtes économiques, financières, judiciaires et administratives<br/>
+          Assainissement du fichier solde et lutte contre les détournements de deniers publics. Contrôle des
+          services de l’état, gestion, supervision et exécution des programmes stratégiques de formation des
+          aspirants enquêteurs<br/>
+          Identification numérique et traçage à travers certains logiciels de tracking et de protection des
+          données (BYOD et COPE)<br/> <br/><br/>
+          <h4><strong>CHEF DE L’UNITE DE PRISE EN CHARGE PSYCHOLOGIQUE ET PSYCHANALYTIQUE DE LA POLICE
+          05 Juin 2017 – 01 février 2018</strong></h4>
+          Missions de veiller à la santé mentale des FMO et faire des référencements auprès des unités de
+          santé<br/>
+          Suivre les fonctionnaires dans les zones à risque et faire une évaluation typographique et
+          typologique des menaces et rendre compte au quotidien à la hiérarchie<br/> <br/><br/>
+          <h4><strong>COMMANDANT DU GROUPEMENT SÉCURITÉ ET PROTECTION PHYSIQUE
+          08 Janvier 2016 – 05 juin 2017</strong></h4>
+          Assurer la protection des hautes personnalités, sécuriser des événements majeurs, assurer la lutte
+          contre le terrorisme transfrontalier<br/>
+          Assurer la protection des services à travers la mise sur pied d’un système informatique
+          d’identification des signatures numériques.Mise sur pied et gestion des terminaux à risque (intrusion, fichage, audit, espionnage, attaques
+          numériques des systèmes d’info.)<br/>
+          Sécurisation des données d’enquêtes via un conteneur crypté (VeraCrypt, Zed, Dockers etc.)
+          Assurer la médiation avec toutes les forces de sécurité des états voisins, assurer la formation
+          commune des forces de défense et de sécurité des pays présents dans le dispositif commun de
+          sécurité<br/>
+          Gérer la formation des tireurs d’élites et des snipers, procéder à la mise en œuvre de l’ensemble
+          des mesures nécessaires à l’organisation matérielle et à la sécurité des déplacements des
+          personnes et de leurs biens, notamment celle du Chef de l’Etat et les autorités du pays<br/><br/><br/>
+          <h4><strong>COMMANDANT OPERATIONNEL ET OFFICIER DE LIAISON BIR-DELTA/DGSN
+          05 janvier 2015 – 05 janvier 2016</strong></h4>
+          Mission/Projet de création de la Police Camerounaise Delta (PCD) entant que Chef de Projet.
+          Veiller à la sécurité intérieure et extérieure du Cameroun au niveau des côtes fluviales avec le
+          Nigéria<br/>
+          Restreindre l’exécution d’une application ou d’un ensemble d’applications sur les terminaux des
+          différents services (BIR-POLICE)<br/>
+          Faire du déploiement sélectif en fonction des besoins et des profils des différents utilisateurs des
+          systèmes d’information et en fonction des besoins techniques et opérationnels des deux structures<br/> <br/><br/>
+          <h4><strong>CHEF DE LA BRIGADE DES ENQUÊTES SPÉCIALISÉES AU CABINET DU DGSN
+          06 août 2007 – 04 janvier 2016</strong></h4>
+          Missions de sécurité générale à savoir : veiller à la sécurité des personnes, des institutions à titre
+          préventif et répressif. L’organisation au niveau central de toute enquête visant à ramener la paix et
+          la sécurité au sein des unités de police, l’investigation sur les atteintes à la sûreté de l’état et la
+          sécurité de ceux qui l’incarnent et enfin, l’inspection des agents de l’état sur l’étendue du territoire
+          pour le suivi des hommes et leurs états de service<br/>
+          Limiter au besoin l’accès à certains services clés (messagerie des policiers et des services,
+          adresses mails etc.) aux applications et aux comptes approuvés dans les services de la police <br/><br/><br/>
+          <h4> <strong>OFFICIER DE LIAISON A LA DFGIL/DGSN29 août 2003 – 02 août 2007</strong></h4>
+          Liaison des services techniques, logistiques, mobiliers et immobiliers en qualité d’attaché de
+          sécurité<br/>
+          Inventorier de façon détaillée les applications numériques, informatiques, ou tous les besoins
+          technologiques et/ou techniques des services
+        </p>
+      </section>
+
+      <div class="pimg4">
+        <div class="ptext">
+          <span class="border trans">
+            <strong>FORMATIONS</strong> <h2 id="FORMATIONS"></h2>
+          </span>
+        </div>
+      </div>
+
+      <section class="section section-dark">
+        <h2>formations</h2>
+        <p><br/>
+          <h4><strong>ÉCOLE DE GUERRE ÉCONOMIQUE DE PARIS</strong></h4><br/>
+            Exécutive MBA en Management des Risques, Sûreté Internationale et Cybersécurité (MRSIC).<br/> Expert en Intelligence
+            Économique. (2020-2021)<br/><br/><br/>
+            <h4><strong>CERTIFICATION
+            PROFESSIONNELLE
+            UNIVERSITÉ SORBONNE NOUVELLE PARIS 3</h4></strong><br/>
+            Master 2 Professionnel : Application Informatique, Gestion et Education aux Médias,<br/> parcours ingénierie de la formation
+            à distance (AIGEME-IFD). (2011-2012)</h4><br/><br/><br/>
+            <h4><strong>UNIVERSITÉ DE YAOUNDÉ I</strong></h4><br/>
+            Master 2 Psychologie Sociale des Organisations (PSO). (2005-2010)<br/><br/><br/>
+            <h4><strong>ÉCOLE NATIONALE SUPÉRIEURE DE POLICE DE YAOUNDÉ</h4></strong><br/>
+            Diplôme d’Officier de Police Judiciaire. (2001-2003)<br/><br/><br/>
+        </p>
+      </section>
+
+      <div class="pimg5">
+        <div class="ptext">
+          <span class="border trans">
+            <strong>CONTACT</strong> <h2 id="CONTACT"></h2>
+          </span>
+        </div>
+      </div>
+      <section class="section section-light">
+        <h2>Contact</h2>
+        <p><div class="social-menu">
+          <h3>Besoin de me contacter ? </h3><br/>
+
+          <h5>Mon adresse fixe :</h5>
+        <img src="icones/down-chevron.png"><br/>
+        <div class="infos">
+          <div> <img src="icones/telephonique.png"></div> <!-- icône du téléphone issue de la librairie FabIcone-->
+        <p><h6>(+33) 6 04 01 73 92 </h6></p>
+      </div>
+        <div class="infos">
+          <div> <img src="icones/home.png"></div> <!-- icône issue de la librairie FabIcone-->
+        <p><h6>1, route de Brière les Scellées
+          Étampes.91150. France </h6></p><br/><br/><br/><br/>
+      </div>
+      <h5> Retrouvez-moi aussi sur les réseaux sociaux :</h5>
+         <img src="icones/down-chevron.png">
+
+
+       <!--Début configuration des boutons de contact---(sur les réseaux sociaux)--->
+          <div class="icons second">
+            <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="https://www.skype.com/en/"><i class="fab fa-skype"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/alain-nganko-nkwilang-8703456a/?trk" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li>
+                <a href="https://mail.google.com/mail/"><i class="fa-solid fa-envelope"></i></i></a>
+            </li>
+        </div>
+    <script>
+        $('.second li').click(function(){
+           $(this).toggleClass("shadow-2").siblings();
+           $(this).toggleClass("fill-color").siblings();
+        });
+     </script>  <!--Fin configuration des boutons de contact---(sur les réseaux sociaux)--->
+
+    <!--Début Configuration du formulaire de soumission d'une demande de service--->
+    </section>
+      <div class="pimg1">
+
+            <!--Nous allons appliquer un style propre à notre formulaire et nous allons le reproduire dans le fichier CSS
+              pour que le style puisse être appliqué--->
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+          *{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+
+          }
+          .contact-wrapper{
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              flex-direction: column;
+              width: 100%;
+              min-height: 100vh;
+          }
+          .heading{
+              padding: 30px 0px;
+              font-size: 35px;
+          }
+          .contact-box{
+              display: flex;
+              width: 90%;
+              min-height: 80vh;
+              background-color: rgb(238, 238, 238);
+              padding: 20px;
+              box-shadow: 15px 15px 15px rgb(211, 208, 208);
+              border-radius: 10px;
+          }
+          .left-contact{
+              background-color: #373c56;
+              flex: 1;
+              position: relative;
+              overflow: hidden;
+              color: white;
+              padding: 50px;
+              border-radius: 10px;
+          }
+
+
+          .right-contact,.form-container{
+              flex: 2;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .input{
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+          }
+          form{
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+              margin: 20px;
+          }
+          input,textarea{
+              width: 450px;
+              border: none;
+              border-bottom: 2px solid transparent;
+              background-color: rgb(190, 187, 187);
+              padding: 10px;
+              border-radius: 5px;
+              font-size: 20px;
+              margin: 10px;
+          }
+          label{
+              font-size: 22px;
+              padding: 10px 0px;
+          }
+          select{
+              width: 450px;
+              border-radius: 5px;
+              padding: 10px;
+              background-color: rgb(190, 187, 187);
+              border: 2px solid transparent;
+              font-size: 18px;
+              margin: 10px;
+
+           }
+          button{
+              padding: 15px 40px;
+              border: none;
+              background-color:  #eb77c4;
+              font-size: 20px;
+              margin: 30px 10px;
+              border-radius: 5px;
+              color: white;
+              transition: .5s all ease-in-out;
+              border: 2px solid transparent;
+          }
+          button:hover{
+              background-color: transparent;
+              border: 2px solid #eb77c4;
+              color: black
+              ;
+          }
+          .social-icons{
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+          }
+          .lab{
+              padding: 20px 100px;
+              font-size: 50px;
+              color: rebeccapurple;
+          }
+
+
+          @media screen and (max-width:1350px ) {
+              .lab{
+                  padding: 20px 20px;
+              }
+          }
+          @media screen and (max-width:1200px ) {
+             .contact-box{
+                 width: 95%;
+             }
+          }
+          @media screen and (max-width:1100px ) {
+
+              input,textarea{
+                  width: 350px;
+              }
+          }
+          @media screen and (max-width:950px ) {
+              .contact-box{
+                  flex-direction: column;
+              }
+          }
+          @media screen and (max-width:520px ) {
+              .form-container{
+                  flex-direction: column;
+              }
+          }
+          @media screen and (max-width:420px ) {
+              input,textarea{
+                  width: 300px;
+              }
+          } /*----Fin Application du style-----*/
+
+          </style>   <!-- configuration du formulaire proprement dit-->
+              <section class="contact-wrapper">
+                  <div class="heading">
+                      <h3>Besoin des mes services ? Veuillez remplir le formulaire ci-dessous  </h3>
+                  </div>
+                  <div class="contact-box">
+                      <div class="left-contact">
+                        <img src="ressources/image2.png">
+
+                      </div>
+                      <div class="right-contact">
+                         <div class="form-container">
+                             <form method="post" action="action.php">
+
+                              <input type="text" name="nom_prenom" placeholder="Nom / Prénom" >
+
+                                 <input type="email" name="email" placeholder="Email">
+
+                                 <input type="tel" name="telephone" placeholder="Numéro de téléphone">
+
+                                 <textarea type="text" name="details" placeholder="Bien vouloir détailler au maximum votre Besoin afin de pouvoir mieux vous aider"
+                                   id="" cols="30" rows=""></textarea>
+
+                                 <button type="submit" name="Envoyer">Envoyer</button>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <p><h5>Dr Alain Nganko Nkwilang</h5>
+              <h6>Tous droits réservés </h6></p>
+              <!--Fin configuration du formulaire de soumission d'une demande de service-->
+
+
+      </div>
+      <!-- Fin de création des mini pages (Qualifications, Compétences, Expérience...)-->
+
+
+      <!-- Début configuration de la flèche (rouge) pour remonter au début de la page-->
+      <div class="btn">
+        <img src="icones/arrow_up.png" class="icone">
+
+      </div> <!-- Fin configuration de la flèche (rouge) pour remonter au début de la page-->
+
+
+
+    </header> <!-- Fin de configuration de la page d'accueil-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>  <!-- intégration de la bibliothèque JavaScript GSAP (utilisée pour les animations) -->
+    <script src="demarrage.js"></script>
+  </body>
+</html>
